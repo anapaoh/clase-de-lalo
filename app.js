@@ -121,7 +121,7 @@ const html_footer = `</div>
         next(); //Le permite a la petición avanzar hacia el siguiente middleware
     });
 
-    app.use('/plantas/agregar', (request, response, next) => {
+    app.get('/plantas/agregar', (request, response, next) => {
         response.send(html_header + html_form + html_footer); 
     });
 
@@ -131,3 +131,6 @@ const html_footer = `</div>
     });
     
     app.listen(3000);
+
+    /*los middleware van de lo específico a lo general*/
+    //get y use
