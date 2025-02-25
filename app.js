@@ -121,7 +121,13 @@ const html_footer = `</div>
         next(); //Le permite a la petición avanzar hacia el siguiente middleware
     });
 
+    //app.get es para registrar un middleware para peticiones HTTP GET
     app.get('/plantas/agregar', (request, response, next) => {
+        response.send(html_header + html_form + html_footer); 
+    });
+
+     //app.get es para registrar un middleware para peticiones HTTP POST
+     app.post('/plantas/agregar', (request, response, next) => {
         response.send(html_header + html_form + html_footer); 
     });
 
