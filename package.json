@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/anapaoh/clase-de-lalo/issues"
   },
-  "homepage": "https://github.com/anapaoh/clase-de-lalo#readme"
+  "homepage": "https://github.com/anapaoh/clase-de-lalo#readme",
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  }
 }
