@@ -1,7 +1,5 @@
 const express = require('express');
-
 const router = express.Router();
-
 const html_header = `
 <!DOCTYPE html>
 <html>
@@ -32,12 +30,15 @@ const html_header = `
       
         <div id="navbarBasicExample" class="navbar-menu">
           <div class="navbar-start">
-            <a class="navbar-item">
+            <a href="/" class="navbar-item">
               Home
             </a>
       
-            <a class="navbar-item">
-              Documentation
+            <a href="/plantas/agregar" class="navbar-item">
+              Agregar planta
+            </a>
+            <a href="/plantas/regar" class="navbar-item">
+              Regar plantas
             </a>
       
             <div class="navbar-item has-dropdown is-hoverable">
@@ -115,14 +116,11 @@ const html_footer = `</div>
   </body>
 </html>
 `;
-
 const plantas = [];
-
 //router.get es para registrar un middleware para peticiones HTTP GET
 router.get('/agregar', (request, response, next) => {
     response.send(html_header + html_form + html_footer);
 });
-
 //router.post es para registrar un middleware para peticiones HTTP POST
 router.post('/agregar', (request, response, next) => {
     console.log(request.body);
@@ -144,5 +142,8 @@ router.post('/agregar', (request, response, next) => {
     html += html_footer;
     response.send(html);
 });
-
+const path = require('path');
+router.get('/index.html', (request, response, next) => {
+  response.sendFile(path.join(__dirname, '..', 'views', 'index.html'));
+});
 module.exports = router;
