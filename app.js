@@ -15,13 +15,13 @@ app.use((request, response, next) => {
 
 const plantasRoutes = require('./routes/plantas.routes');
 
-app.use('/plantas', plantasRoutes); //aquí lo que se hace es que se cuelguen todas las rutas plantas que aparezca ese archivo. 
+app.use('/plantas', plantasRoutes); //aquí lo que se hace es que se cuelguen todas las rutas plantas que aparezca ese archivo. Si el localhost noincluye nada que diga plantas aparece lo de hola mundo
 
 app.use((request, response, next) => {
     console.log('Otro middleware!');
     
     //Manda la respuesta
-    response.send('¡Hola mundo!'); 
+    response.send('¡Hola mundo!'); /*status(404).send("No se encuentra el recurso que estás buscando)*/
 });
 
 app.listen(3000);
