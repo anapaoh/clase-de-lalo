@@ -43,8 +43,6 @@ function factorial(n) {
     return n * factorial(n - 1);
 }
 
-
-
 fs.readFile(path.join(__dirname, 'lab5', 'index.html'), (err, data) => {
     if (err) {
         console.log('Error al leer el archivo:', err);
