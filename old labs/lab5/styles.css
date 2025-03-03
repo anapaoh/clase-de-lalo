@@ -1,10 +1,30 @@
 
 header {
-    background-color: rgb(229, 229, 229); /* Usando la variable para establecer el color de fondo */
+    background-color: rgb(229, 229, 229); 
 }
 
+.btn-rojo {
+  color: red; 
+}
+
+.btn-rojo:hover {
+  background-color: #ff0015;  
+  color: rgb(255, 255, 255); 
+}
+
+
+p {
+  font-family: "Times New Roman", sans-serif;
+}
+
+
+.texto-pequeno {
+  font-size: 11px;  
+}
+
+
 .custom-footer {
-    background-color: #c21807; /* Rojo personalizado */
+    background-color: #c21807;
   }
 
   .custom-footer {
@@ -17,4 +37,3 @@ header {
     text-align: right;
     margin-right: 20px; /* No lo logré aquí*/
   }
-  
