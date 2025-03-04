@@ -1,25 +1,39 @@
-</*button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-  Launch demo modal
-</button>
+const passwordField = document.getElementById("password");
+const confirmPasswordField = document.getElementById("confirmPassword");
+const errorDiv = document.getElementById("error");
+const submitButton = document.getElementById("submitButton");
 
-document.getElementById("password").type = "text";*/
+document.addEventListener('DOMContentLoaded', function() {
+  var exampleModal = new bootstrap.Modal(document.getElementById('exampleModal'));
+  exampleModal.show();
+
+  passwordField.addEventListener('input', validatePasswords);
+  confirmPasswordField.addEventListener('input', validatePasswords);
+
+  function validatePasswords() {
+    if (passwordField.value === confirmPasswordField.value && passwordField.value !== "") {
+      errorDiv.style.visibility = "hidden";
+      submitButton.disabled = false;
+    } else {
+      errorDiv.style.visibility = "visible";
+      submitButton.disabled = true;
+    }
+  }
+
+  function cambiarEstilo(inputId) {
+    const input = document.getElementById(inputId);
+    input.style.fontSize = '18px'; 
+    input.style.color = 'blue';  
+}
 
 
+  exampleModal._element.addEventListener('hidden.bs.modal', function () {
+    var offcanvas = new bootstrap.Offcanvas(document.getElementById('offcanvasDark'));
+    offcanvas.show();
+  });
 
-document.addEventListener('DOMContentLoaded', function () {
-
-    var modal = new bootstrap.Modal(document.getElementById('exampleModal'));
-    modal.show();
-
-    
-    var saveChangesButton = document.getElementById('saveChanges');
-    
-
-    saveChangesButton.addEventListener('click', function () {
-        modal.hide();
-        
-
-        var offcanvas = new bootstrap.Offcanvas(document.getElementById('offcanvasDark'));
-        offcanvas.show();
-    });
+  submitButton.addEventListener('click', function(event) {
+    event.preventDefault();
+    exampleModal.hide();
+  });
 });

@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,24 +10,34 @@
   </head>
   <body>
 
-    <div class="modal" tabindex="-1" id="exampleModal">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title">Modal title</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            <button type="button" class="btn btn-primary" id="saveChanges">Save changes</button>
+
+<div class="modal" tabindex="-1" id="exampleModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Para poder ingresar al sitio:</h5>
+      </div>
+      <div class="modal-body">
+        <form>
+          <label for="password">Contraseña:</label>
+          <input id="password" type="password" class="mi-input" placeholder="Escribe tu contraseña" required>
+          <br><br>
+          <label for="confirmPassword">Confirmar Contraseña:</label>
+          <input id="confirmPassword" type="password" class="mi-input" placeholder="Confirma tu contraseña" required>
+          <br><br>
+          
+          <div id="error" class="invalid" style="visibility: hidden;">
+              ¡Error! Las contraseñas no coinciden.
           </div>
-          <div class="modal-body">
-            <p>Modal body text goes here.</p>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary" id="saveChanges">Save changes</button>
-          </div>
-        </div>
+          <br><br>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="submit" id="submitButton" disabled>Enviar</button>
       </div>
     </div>
+  </div>
+</div>
 
     <header class="text-black">
       <div class="mx-auto p-3" style="width: 400px;">
@@ -34,8 +45,17 @@
       </div>
     </header>
 
+
+    /*<button type="button" class="btn btn-secondary"
+    data-bs-toggle="tooltip" data-bs-placement="top"
+    data-bs-custom-class="custom-tooltip"
+    data-bs-title="This top tooltip is themed via CSS variables.">
+Custom tooltip
+</button>*/
+
     <div class="mx-auto p-2" style="max-width: 1200px;">
-      <img src="Imagen 1 cart.png" class="img-fluid" alt="Imagen de 2 personas tomando la caja de un anillo. Ambos con joyería en sus manos">
+      <img src="Imagen 1 cart.png" class="img-fluid" 
+      alt="Imagen de 2 personas tomando la caja de un anillo. Ambos con joyería en sus manos">
     </div>
 
     <p>EL REGALO SEGÚN CARTIER</p>
