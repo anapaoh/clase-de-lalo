@@ -4,11 +4,17 @@ const errorDiv = document.getElementById("error");
 const submitButton = document.getElementById("submitButton");
 
 document.addEventListener('DOMContentLoaded', function() {
+
   var exampleModal = new bootstrap.Modal(document.getElementById('exampleModal'));
   exampleModal.show();
 
   passwordField.addEventListener('input', validatePasswords);
   confirmPasswordField.addEventListener('input', validatePasswords);
+
+  var tooltipElements = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+  tooltipElements.forEach(function (tooltipElement) {
+    new bootstrap.Tooltip(tooltipElement);
+  });
 
   function validatePasswords() {
     if (passwordField.value === confirmPasswordField.value && passwordField.value !== "") {
@@ -27,13 +33,14 @@ document.addEventListener('DOMContentLoaded', function() {
 }
 
 
-  exampleModal._element.addEventListener('hidden.bs.modal', function () {
-    var offcanvas = new bootstrap.Offcanvas(document.getElementById('offcanvasDark'));
-    offcanvas.show();
-  });
+exampleModal._element.addEventListener('hidden.bs.modal', function () {
+  var offcanvas = new bootstrap.Offcanvas(document.getElementById('offcanvasDark'));
+  offcanvas.show();
+});
 
-  submitButton.addEventListener('click', function(event) {
-    event.preventDefault();
-    exampleModal.hide();
-  });
+
+submitButton.addEventListener('click', function(event) {
+  event.preventDefault();
+  exampleModal.hide();
+});
 });
